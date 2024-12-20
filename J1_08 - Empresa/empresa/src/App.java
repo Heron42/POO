@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        //sc.useLocale(Locale.US); // Força o Scanner a usar ponto como separador decimal
-        new Locale("pt", "BR");
+        Locale localeBR = new Locale("pt", "BR");
 
         // Ler informações da empresa
         String nomeEmpresa = sc.next();
@@ -18,9 +17,6 @@ public class App {
         {
             String nomeDepto = sc.next();
             int numFuncionarios = sc.nextInt();
-
-            System.out.println("Departamento: " + nomeDepto);
-            System.out.println("Número de funcionários: " + numFuncionarios);
 
             Departamento depto = new Departamento(nomeDepto);
 
@@ -55,9 +51,10 @@ public class App {
 
         for (Departamento depto : empresa.getDepartamentos())
         {
-            System.out.printf(Locale.forLanguageTag("pt-BR"), "%s R$ %.2f\n", depto.getNome(), depto.custoTotalDepto());
+            System.out.printf(localeBR, "%s R$ %.2f\n", depto.getNome(), depto.custoTotalDepto());
         }
 
+        System.out.println("");
         sc.close();
     }
 }
