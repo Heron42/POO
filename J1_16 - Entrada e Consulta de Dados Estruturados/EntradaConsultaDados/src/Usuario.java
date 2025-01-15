@@ -1,10 +1,10 @@
-public class Pessoa {
+public class Usuario {
 
     private int rg;
     private String nome;
     private int idade;
 
-    public Pessoa(int rg, String nome, int idade)
+    public Usuario(int rg, String nome, int idade)
     {
         this.rg = rg;
         this.nome = nome;
